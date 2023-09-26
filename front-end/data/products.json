@@ -3,17 +3,17 @@
     {
       "sku": "item0001",
       "name": "Small Bean",
-      "price": "6.00"
+      "price": 6.00
     },
     {
-      "sku": "item0001",
+      "sku": "item0002",
       "name": "Medium Bean",
-      "price": "9.00"
+      "price": 9.00
     },
     {
-      "sku": "item0001",
+      "sku": "item0003",
       "name": "Large Bean",
-      "price": "12.00"
+      "price": 12.00
     }
   ]
 }
