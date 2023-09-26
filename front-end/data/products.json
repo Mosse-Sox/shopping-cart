@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "sku": "item0001",
+      "name": "Small Bean",
+      "price": "6.00"
+    },
+    {
+      "sku": "item0001",
+      "name": "Medium Bean",
+      "price": "9.00"
+    },
+    {
+      "sku": "item0001",
+      "name": "Large Bean",
+      "price": "12.00"
+    }
+  ]
+}
