@@ -1,9 +1,13 @@
+import { createContext } from "react";
+
+// defining product type 
 export type ProductType = {
   sku: string;
   name: string;
   price: number;
 };
 
+// creating initial state for provider
 const initialState: ProductType[] = [
   {
     sku: "item0001",
@@ -22,6 +26,13 @@ const initialState: ProductType[] = [
   },
 ];
 
-export type UserProductsContextType = { products: ProductType[] };
+// defining the useContext type 
+export type UseProductsContextType = { products: ProductType[] };
 
+// creating initial context state
+const initialContextState: UseProductsContextType = { products: [] };
+
+// creating products context
+const ProductsContext =
+  createContext<UseProductsContextType>(initialContextState);
 
