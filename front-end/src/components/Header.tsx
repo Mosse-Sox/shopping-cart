@@ -15,6 +15,6 @@ const Header = ({ viewCart, setViewCart }: PropsType) => {
       </div>
     </header>
   );
-  return <div>Header</div>;
+  return content;
 };
 export default Header;

@@ -12,8 +12,8 @@ function App() {
   const content = (
     <>
     <Header viewCart={viewCart} setViewCart={setViewCart} />
-    {pageContent}
-    <Footer viewCart={viewCart} />
+    {/* {pageContent}
+    <Footer viewCart={viewCart} /> */}
     </>
   ) 
   return content;
