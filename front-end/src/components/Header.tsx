@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import "../../public/styles/header.css";
 
 type PropsType = {
   viewCart: boolean;
@@ -14,8 +15,8 @@ const Header = ({ viewCart, setViewCart }: PropsType) => {
       <div className="header__price-box">
         <p>Total Items: </p>
         <p>Total Price: </p>
+        <Nav viewCart={viewCart} setViewCart={setViewCart} />
       </div>
-      <Nav viewCart={viewCart} setViewCart={setViewCart} />
     </header>
   );
   return content;

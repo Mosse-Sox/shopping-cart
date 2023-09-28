@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Spacing on both sides of the header */
+  align-items: center; /* Vertically align items in the center */
+}
+
+.header__title-bar {
+  /* You can add additional styles for the title bar if needed */
+}
+
+.header__price-box {
+  /* You can add additional styles for the price box if needed */
+} 
