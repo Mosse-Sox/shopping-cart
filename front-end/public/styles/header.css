@@ -11,6 +11,17 @@
 .header__title-bar {
   display: flex;
   font-size: 1.6em;
+
+}
+
+.title {
+  transition: text-shadow 0.3s ease;
+  text-shadow: 0 0 0 transparent;
+}
+
+.title:hover {
+  text-shadow: 0 0 10px rgba(247, 245, 139, 0.51);
+  cursor: pointer;
 }
 
 .header__price-box {
@@ -24,7 +35,26 @@
   color: #fcfbdc;
   border: none;
   border-radius: 50%;
-  height: 4em;
-  width: 4em;
+  height: 5em;
+  width: 5em;
+  margin-top: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
  }
-} 
+
+ .nav button:hover {
+  cursor: pointer;
+  text-align: center;
+  border: white 3px solid;
+  box-shadow: 0 0 10px 3px rgba(254, 253, 253, 0.51);
+ }
+
+ .nav .button__set-view {
+  padding: 5px;
+ }
+}
