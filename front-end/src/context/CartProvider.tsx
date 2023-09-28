@@ -1,3 +1,5 @@
+import { useReducer, useMemo } from "react";
+
 export type CartItemType = {
   sku: string;
   name: string;
@@ -22,7 +24,6 @@ export type ReducerAction = {
   type: string;
   payload?: CartItemType;
 };
-
 
 const reducer = (
   state: CartStateType,
@@ -75,13 +76,13 @@ const reducer = (
         throw new Error("Item must exist to update qty");
       }
 
-      const updatedItem: CartItemType = { ...itemExists, qty }
+      const updatedItem: CartItemType = { ...itemExists, qty };
 
       const filteredCart: CartItemType[] = state.cart.filter(
         (item) => item.sku !== sku
       );
 
-      return { ...state, cart: [ ...filteredCart, updatedItem] }
+      return { ...state, cart: [...filteredCart, updatedItem] };
     }
     case REDUCER_ACTION_TYPE.SUBMIT: {
       return { ...state, cart: [] };
@@ -89,4 +90,33 @@ const reducer = (
     default:
       throw new Error("Unidentified reducer action type");
   }
+};
+
+const UseCartContext = (initialCartState: CartStateType) => {
+  const [state, dispatch] = useReducer(reducer, initialCartState);
+
+  const REDUCER_ACTIONS = useMemo(() => {
+    return REDUCER_ACTION_TYPE;
+  }, []);
+
+  const totalItems: number = state.cart.reduce((prev, cartItem) => {
+    return prev + cartItem.qty;
+  }, 0);
+
+  const totalPrice = new Intl.NumberFormat("en-CA", {
+    style: "currency",
+    currency: "CAD",
+  }).format(
+    state.cart.reduce((prev, cartItem) => {
+      return prev + cartItem.qty * cartItem.price;
+    }, 0)
+  );
+
+  const cart = state.cart.sort((a, b) => {
+    const itemA = Number(a.sku.slice(-4));
+    const itemB = Number(b.sku.slice(-4));
+    return itemA - itemB;
+  });
+
+  return { dispatch, REDUCER_ACTIONS, totalItems, totalPrice, cart }
 };
