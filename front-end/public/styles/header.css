@@ -1,14 +1,30 @@
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* Spacing on both sides of the header */
-  align-items: center; /* Vertically align items in the center */
+  align-items: center; 
+  justify-content: space-between;
+  padding: 10px 10px;
+  background-color: cornflowerblue;
+  color: #fdf8e4;
 }
 
 .header__title-bar {
-  /* You can add additional styles for the title bar if needed */
+  display: flex;
+  font-size: 1.6em;
 }
 
 .header__price-box {
-  /* You can add additional styles for the price box if needed */
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-size: 1.25em;
+
+ .nav button {
+  background-color: #0d3d9666;
+  color: #fcfbdc;
+  border: none;
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+ }
 } 
