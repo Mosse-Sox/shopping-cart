@@ -15,7 +15,7 @@ function App() {
     {pageContent}
     <Footer viewCart={viewCart} />
     </>
-  )
+  ) 
   return content;
 }
 
