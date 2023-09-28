@@ -1,4 +1,4 @@
-import { useReducer, useMemo } from "react";
+import { useReducer, useMemo, createContext, ReactElement } from "react";
 
 export type CartItemType = {
   sku: string;
@@ -92,9 +92,10 @@ const reducer = (
   }
 };
 
-const UseCartContext = (initialCartState: CartStateType) => {
+const useCartContext = (initialCartState: CartStateType) => {
   const [state, dispatch] = useReducer(reducer, initialCartState);
 
+  // memoizing the reducer actions - ensures that REDUCER_ACTION_TYPE remains constant
   const REDUCER_ACTIONS = useMemo(() => {
     return REDUCER_ACTION_TYPE;
   }, []);
@@ -103,6 +104,7 @@ const UseCartContext = (initialCartState: CartStateType) => {
     return prev + cartItem.qty;
   }, 0);
 
+  // totalPrice has the form 'CA$1.00'
   const totalPrice = new Intl.NumberFormat("en-CA", {
     style: "currency",
     currency: "CAD",
@@ -118,5 +120,21 @@ const UseCartContext = (initialCartState: CartStateType) => {
     return itemA - itemB;
   });
 
-  return { dispatch, REDUCER_ACTIONS, totalItems, totalPrice, cart }
+  return { dispatch, REDUCER_ACTIONS, totalItems, totalPrice, cart };
 };
+
+export type UseCartContextType = ReturnType<typeof useCartContext>;
+
+const initialCartContextState: UseCartContextType = {
+  dispatch: () => {},
+  REDUCER_ACTIONS: REDUCER_ACTION_TYPE,
+  totalItems: 0,
+  totalPrice: "",
+  cart: [],
+};
+
+export const CartContext = createContext<UseCartContextType>(initialCartContextState)
+
+type ChildrenType = { children?: ReactElement | ReactElement[] }
+
+
