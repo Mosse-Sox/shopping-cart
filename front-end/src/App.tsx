@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import { useState } from "react";
 
+import "../public/styles/background.css"
+
 function App() {
   const [viewCart, setViewCart] = useState<boolean>(false);
 

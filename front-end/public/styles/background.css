@@ -1,3 +1,33 @@
 .rainbow-background {
   width: 100%;
+  height: 100vh;
+  background-color: #fb7ec1;
+  animation: rainbow 35s linear infinite;
+}
+
+@keyframes rainbow {
+  12.5% {
+    background-color: #f97373;
+  }
+  25% {
+    background-color: #f9bb65;
+  }
+  37.5% {
+    background-color: #f8f78d;
+  }
+  50% {
+    background-color: #6ff15d;
+  }
+  62.5% {
+    background-color: #04cbf8;
+  }
+  75% {
+    background-color: #6666fc;
+  }
+  87.5% {
+    background-color: #d18bf4;
+  }
+  100% {
+    background-color: #fb7ec1;
+  }
 }
