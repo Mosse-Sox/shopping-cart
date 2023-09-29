@@ -5,18 +5,20 @@ import ProductList from "./components/ProductList";
 import { useState } from "react";
 
 function App() {
-  const [ viewCart, setViewCart ] = useState<boolean>(false);
+  const [viewCart, setViewCart] = useState<boolean>(false);
 
-  const pageContent = viewCart ? <Cart /> : <ProductList />
+  const pageContent = viewCart ? <Cart /> : <ProductList />;
 
   const content = (
     <>
-    <Header viewCart={viewCart} setViewCart={setViewCart} />
+      <Header viewCart={viewCart} setViewCart={setViewCart} />
+      <div className="rainbow-background">
     {/* {pageContent}
-    <Footer viewCart={viewCart} /> */}
+        <Footer viewCart={viewCart} /> */}
+      </div>
     </>
-  ) 
+  );
   return content;
 }
 
-export default App; 
+export default App;
