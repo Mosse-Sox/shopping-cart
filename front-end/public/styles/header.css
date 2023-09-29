@@ -5,8 +5,10 @@
   align-items: center; 
   justify-content: space-between;
   padding: 1em 2.5em;
-  background-color: #6495ed;
-  color: #fdf8e4;
+  background-color: #ffffff7f;
+  color: #4d4359;
+  border-bottom: solid 3px white;
+  box-shadow: 0 2px 15px 2px #ffffff;
 }
 
 /* ----- Title ----- */
@@ -36,8 +38,8 @@
  font-size: 1.25em;
 
  .nav button {
-  background-color: #0d3d9666;
-  color: #fcfbdc;
+  background-color: #ffffff5f;
+  color: #625b66;
   border: none;
   border-radius: 50%;
   height: 5em;
@@ -55,8 +57,8 @@
  .nav button:hover {
   cursor: pointer;
   text-align: center;
-  border: white 3px solid;
-  box-shadow: 0 0 10px 3px rgba(254, 253, 253, 0.51);
+  border: rgb(68, 53, 123) 3px solid;
+  box-shadow: 0 0 5px 5px rgba(171, 146, 187, 0.542);
  }
 
  .nav .button__set-view {

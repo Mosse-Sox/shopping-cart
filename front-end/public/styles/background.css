@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vh;
   background-color: #fb7ec1;
-  animation: rainbow 35s linear infinite;
+  animation: rainbow 80s linear infinite;
 }
 
 @keyframes rainbow {

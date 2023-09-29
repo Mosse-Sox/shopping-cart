@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import { useState } from "react";
 
-import "../public/styles/background.css"
+import "../public/styles/background.css";
 
 function App() {
   const [viewCart, setViewCart] = useState<boolean>(false);
@@ -12,13 +12,11 @@ function App() {
   const pageContent = viewCart ? <Cart /> : <ProductList />;
 
   const content = (
-    <>
+    <div className="rainbow-background">
       <Header viewCart={viewCart} setViewCart={setViewCart} />
-      <div className="rainbow-background">
-    {/* {pageContent}
+      {/* {pageContent}
         <Footer viewCart={viewCart} /> */}
-      </div>
-    </>
+    </div>
   );
   return content;
 }
